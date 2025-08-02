@@ -35,8 +35,8 @@ All theory files are written in Markdown and organized by topic:
 
 | Progress Snapshot              | Screenshot |
 |--------------------------------|------------|
-| 📺 Video Lesson Progress 1     | ![](./screenshots/wolfamu-cert-progress-1.png) |
-| 📺 Video Lesson Progress 2     | ![](./screenshots/wolfamu-cert-progress-2.png) |
+| 📺 Video Lesson Progress 1     | ![](./screenshots/wolfamu-cert-progress-1png.png) |
+| 📺 Video Lesson Progress 2     | ![](./screenshots/wolfamu-cert-progress-2png.png) |
 | 🧠 Quiz Completion Result      | ![](./screenshots/wolfamu-quiz-progress.png) |
 
 ---
@@ -90,6 +90,7 @@ This is a solid course for anyone looking to:
 **Thành Danh** – Pentester & Cybersecurity Researcher  
 
 GitHub: [@ngvtdanhh](https://github.com/ngvtdanhh)  
+
 Email: ngvu.thdanh@gmail.com
 
 ---
