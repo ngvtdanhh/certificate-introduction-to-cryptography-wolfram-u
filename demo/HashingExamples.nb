@@ -1,0 +1,15 @@
+(* Hashing Examples *)
+
+ClearAll[hashSHA256, hashMD5]
+
+hashSHA256[text_] := Hash[text, "SHA256", "HexString"]
+hashMD5[text_] := Hash[text, "MD5", "HexString"]
+
+example1 = "hello world";
+
+sha256Hash = hashSHA256[example1]
+md5Hash = hashMD5[example1]
+
+(* Collision Test *)
+hashSHA256["abc"]
+hashSHA256["abcd"]
