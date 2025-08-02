@@ -1,0 +1,8 @@
+A basic demonstration of the Caesar cipher — a substitution cipher where each letter is shifted by a fixed number.
+Includes:
+
+Customizable shift value
+
+Input/output visualization
+
+Frequency analysis preview
