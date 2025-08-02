@@ -43,7 +43,7 @@ All theory files are written in Markdown and organized by topic:
 
 ### 📜 Certificate
 
-🧠 [`Introduction-to-Cryptography-WolframU-Certificate.pdf`](./Introduction-to-Cryptography-WolframU-Certificate.pdf)
+🧠 [`Introduction-to-Cryptography-WolframU-Certificate.pdf`](./cert/Introduction-to-Cryptography-WolframU-Certificate.pdf)
 
 ---
 
