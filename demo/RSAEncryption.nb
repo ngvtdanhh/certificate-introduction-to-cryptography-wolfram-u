@@ -1,0 +1,23 @@
+(* RSA Encryption Demo *)
+
+ClearAll[rsaKeyGen, rsaEncrypt, rsaDecrypt]
+
+rsaKeyGen[bitlength_: 512] := Module[
+  {p, q, n, phi, e, d},
+  p = RandomPrime[2^(bitlength/2) - 1, 1][[1]];
+  q = RandomPrime[2^(bitlength/2) - 1, 1][[1]];
+  n = p*q;
+  phi = (p - 1)*(q - 1);
+  e = 65537;
+  d = PowerMod[e, -1, phi];
+  <|"PublicKey" -> {e, n}, "PrivateKey" -> {d, n}|>
+]
+
+rsaEncrypt[message_Integer, {e_, n_}] := PowerMod[message, e, n]
+rsaDecrypt[cipher_Integer, {d_, n_}] := PowerMod[cipher, d, n]
+
+(* Example *)
+keys = rsaKeyGen[256];
+message = 42;
+cipher = rsaEncrypt[message, keys["PublicKey"]];
+plaintext = rsaDecrypt[cipher, keys["PrivateKey"]]
