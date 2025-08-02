@@ -1,0 +1,21 @@
+(* Digital Signature Verification *)
+
+ClearAll[generateKeys, signMessage, verifySignature]
+
+generateKeys[] := Module[
+  {privateKey, publicKey},
+  privateKey = CreateDigitalSignatureKeyPair["RSA", 2048]["PrivateKey"];
+  publicKey = CreateDigitalSignatureKeyPair["RSA", 2048]["PublicKey"];
+  <|"Private" -> privateKey, "Public" -> publicKey|>
+]
+
+signMessage[message_, priv_] := CreateDigitalSignature[message, priv]
+verifySignature[message_, sig_, pub_] := 
+ VerifyDigitalSignature[message, sig, pub]
+
+(* Example *)
+keys = generateKeys[];
+msg = "Cryptography is fun!";
+
+signature = signMessage[msg, keys["Private"]];
+isValid = verifySignature[msg, signature, keys["Public"]]
