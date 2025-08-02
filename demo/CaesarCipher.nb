@@ -1,8 +1,25 @@
-A basic demonstration of the Caesar cipher — a substitution cipher where each letter is shifted by a fixed number.
-Includes:
+(* Caesar Cipher Demo *)
 
-Customizable shift value
+ClearAll[caesarEncrypt, caesarDecrypt]
 
-Input/output visualization
+caesarEncrypt[text_, shift_] := 
+ StringJoin[
+  Map[
+   If[LetterQ[#], 
+     FromCharacterCode[
+      Mod[ToCharacterCode[ToUpperCase[#]][[1]] - 65 + shift, 26] + 65
+     ], 
+     #
+   ] &,
+   Characters[text]
+  ]
+ ]
 
-Frequency analysis preview
+caesarDecrypt[text_, shift_] := caesarEncrypt[text, -shift]
+
+(* Example *)
+plaintext = "HELLO WORLD";
+shift = 3;
+
+ciphertext = caesarEncrypt[plaintext, shift]
+decrypted = caesarDecrypt[ciphertext, shift]
